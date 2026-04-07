@@ -2,179 +2,222 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#f8f9fa]">
-      <header className="bg-white shadow-sm py-4 px-6">
-        <div className="max-w-5xl mx-auto flex items-center gap-3">
-          <Image src="/logo-horizontal.svg" alt="Asimetrix" width={140} height={40} />
+    <div className="min-h-screen bg-[#f6fafb] font-sans">
+      {/* Header */}
+      <header className="bg-surface fixed top-0 w-full z-50 border-b border-[#c1c7cf]/20">
+        <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+          <div className="flex items-center gap-3">
+            <a href="https://asimetrix-hub.vercel.app/#" className="flex items-center gap-1 px-2 py-1 text-[#014469] hover:bg-[#e5e9ea] rounded-lg transition-colors">
+              <span className="material-symbols-outlined">arrow_back</span>
+              <span className="text-sm font-medium">Volver al Hub</span>
+            </a>
+          </div>
+          <Image src="/logo-horizontal.svg" alt="Asimetrix" width={120} height={32} />
         </div>
       </header>
 
-      <main className="max-w-5xl mx-auto px-6 py-12">
-        <div className="text-center mb-12">
-          <span className="material-symbols-outlined text-6xl text-[#00b894] mb-4">sensors</span>
-          <h1 className="text-4xl font-bold text-[#1a1a2e] mb-4">Gateway LoRaWAN</h1>
-          <p className="text-xl text-gray-600 mb-6">Guía de instalación y configuración</p>
-          <div className="flex justify-center gap-6 text-sm text-gray-500">
-            <span className="flex items-center gap-1">
-              <span className="material-symbols-outlined text-lg">schedule</span>
+      <main className="pt-24 pb-24 md:pb-12 max-w-7xl mx-auto px-6">
+        {/* Hero Section */}
+        <section className="mb-8">
+          <div className="flex flex-col lg:flex-row gap-8 items-center">
+            <div className="flex-1">
+              <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#014469] text-white text-sm font-bold tracking-widest uppercase rounded-lg shadow-lg shadow-[#014469]/30 mb-4">
+                <span className="material-symbols-outlined text-lg">router</span>
+                Gateway
+              </span>
+              <p className="text-[#41474e] text-lg max-w-2xl leading-relaxed">
+                Sigue cada paso para una correcta instalación.
+              </p>
+            </div>
+            <div className="w-full lg:w-1/4">
+            </div>
+          </div>
+        </section>
+
+        {/* Timeline Steps */}
+        <section className="mb-16 bg-[#f0f4f5] p-8 rounded-xl relative overflow-hidden">
+          <div className="flex flex-wrap gap-4 mb-8">
+            <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#275c82]/20 text-[#014469] text-xs font-semibold rounded-full">
+              <span className="material-symbols-outlined text-sm">schedule</span>
               5 min de lectura
             </span>
-            <span className="flex items-center gap-1">
-              <span className="material-symbols-outlined text-lg">timer</span>
+            <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#00626a]/20 text-[#00484f] text-xs font-semibold rounded-full">
+              <span class="material-symbols-outlined text-sm">timer</span>
               20 min de instalación
             </span>
           </div>
-        </div>
-
-        <div className="grid gap-8">
-          <div className="bg-white rounded-2xl p-8 shadow-sm step-card border-l-4 border-[#00b894]">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="bg-[#00b894] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">01</span>
-              <h2 className="text-2xl font-semibold text-[#1a1a2e]">Verificación eléctrica</h2>
+          <div className="relative flex flex-col md:flex-row justify-between gap-4">
+            <div className="absolute top-6 left-0 w-full h-0.5 bg-[#c1c7cf]/20 hidden md:block -translate-y-1/2 z-0"></div>
+            {/* Step 1 */}
+            <div className="relative z-10 flex md:flex-col items-center md:items-start gap-3 flex-1 bg-[#dfe3e4]/50 p-4 rounded-xl">
+              <div className="w-10 h-10 rounded-full bg-[#e5e9ea] flex items-center justify-center text-[#014469] border border-[#c1c7cf]/20">
+                <span className="material-symbols-outlined text-lg">bolt</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[#41474e] font-bold text-xs tracking-widest uppercase">Paso 1</span>
+                <span className="text-sm font-semibold text-[#181c1d]">Verificación del breaker</span>
+              </div>
             </div>
-            <p className="text-gray-600 mb-4">Antes de comenzar, verifica los siguientes requisitos en el sitio de instalación:</p>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Punto eléctrico a 220V
-              </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Ambiente seco y protegido de la lluvia
-              </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Conexión a internet por cable Ethernet o WiFi
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded-2xl p-8 shadow-sm step-card border-l-4 border-[#00b894]">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="bg-[#00b894] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">02</span>
-              <h2 className="text-2xl font-semibold text-[#1a1a2e]">Conexión y verificación</h2>
+            {/* Step 2 */}
+            <div className="relative z-10 flex md:flex-col items-center md:items-start gap-3 flex-1 bg-[#dfe3e4]/50 p-4 rounded-xl">
+              <div className="w-10 h-10 rounded-full bg-[#e5e9ea] flex items-center justify-center text-[#014469] border border-[#c1c7cf]/20">
+                <span className="material-symbols-outlined text-lg">power</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[#41474e] font-bold text-xs tracking-widest uppercase">Paso 2</span>
+                <span className="text-sm font-semibold text-[#181c1d]">Conexión del Gateway</span>
+              </div>
             </div>
-            <p className="text-gray-600 mb-4">Conecta el Gateway al toma corriente y al router:</p>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Conecta el cable de poder al Gateway
-              </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Conecta el cable Ethernet al router
-              </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Espera 2 minutos hasta que el LED se estabilice
-              </li>
-            </ul>
-            <div className="mt-6 p-4 bg-gray-50 rounded-xl">
-              <h3 className="font-semibold text-[#1a1a2e] mb-2">Indicadores LED:</h3>
-              <div className="grid grid-cols-3 gap-4 text-center text-sm">
-                <div>
-                  <span className="block w-4 h-4 rounded-full bg-green-500 mx-auto mb-1"></span>
-                  <span className="text-gray-600">Verde: Conectado</span>
-                </div>
-                <div>
-                  <span className="block w-4 h-4 rounded-full bg-blue-500 mx-auto mb-1"></span>
-                  <span className="text-gray-600">Azul: Enviando datos</span>
-                </div>
-                <div>
-                  <span className="block w-4 h-4 rounded-full bg-red-500 mx-auto mb-1"></span>
-                  <span className="text-gray-600">Rojo: Error</span>
-                </div>
+            {/* Step 3 */}
+            <div className="relative z-10 flex md:flex-col items-center md:items-start gap-3 flex-1 bg-[#dfe3e4]/50 p-4 rounded-xl">
+              <div className="w-10 h-10 rounded-full bg-[#e5e9ea] flex items-center justify-center text-[#014469] border border-[#c1c7cf]/20">
+                <span className="material-symbols-outlined text-lg">wifi</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[#41474e] font-bold text-xs tracking-widest uppercase">Paso 3</span>
+                <span className="text-sm font-semibold text-[#181c1d]">Verificación de internet</span>
               </div>
             </div>
           </div>
+        </section>
 
-          <div className="bg-white rounded-2xl p-8 shadow-sm step-card border-l-4 border-[#00b894]">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="bg-[#00b894] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">03</span>
-              <h2 className="text-2xl font-semibold text-[#1a1a2e]">Configuración de red</h2>
+        {/* Step Cards Grid */}
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+          {/* Step 1 Card */}
+          <div className="flex flex-col gap-6 p-8 bg-white rounded-xl shadow-sm border-t-4 border-[#275c82]">
+            <div className="flex items-center justify-between">
+              <span className="text-4xl font-black text-[#c1c7cf] opacity-30">01</span>
+              <span className="material-symbols-outlined text-[#014469] text-3xl">bolt</span>
             </div>
-            <p className="text-gray-600 mb-4">El Gateway se configura automáticamente. Verifica en la plataforma:</p>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Accede a la plataforma Asimetrix
-              </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Verifica que el Gateway aparezca en línea
-              </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Confirma la recepción de datos de los nodos
-              </li>
-            </ul>
+            <h3 className="text-xl font-bold text-[#181c1d] tracking-tight">Verificación del breaker</h3>
+            <div className="bg-[#e5e9ea] p-4 rounded-lg">
+              <ul className="text-xs space-y-3 font-medium text-[#41474e]">
+                <li className="flex items-center gap-2">
+                  <span className="material-symbols-outlined text-sm text-[#00626a]">check_circle</span>
+                  Verifica que el breaker de los dispositivos esté en ON
+                </li>
+              </ul>
+            </div>
           </div>
 
-          <div className="bg-white rounded-2xl p-8 shadow-sm step-card border-l-4 border-[#00b894]">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="bg-[#00b894] text-white w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">04</span>
-              <h2 className="text-2xl font-semibold text-[#1a1a2e]">Instalación final</h2>
+          {/* Step 2 Card */}
+          <div className="flex flex-col gap-6 p-8 bg-white rounded-xl shadow-sm border-t-4 border-[#275c82]">
+            <div className="flex items-center justify-between">
+              <span className="text-4xl font-black text-[#c1c7cf] opacity-30">02</span>
+              <span className="material-symbols-outlined text-[#014469] text-3xl">power</span>
             </div>
-            <p className="text-gray-600 mb-4">Instala el Gateway en una posición elevada para mejor cobertura:</p>
-            <ul className="space-y-2">
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Instala a una altura mínima de 2 metros
-              </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Evita obstáculos metálicos cercanos
-              </li>
-              <li className="flex items-center gap-2 text-gray-700">
-                <span className="material-symbols-outlined text-[#00b894]">check_circle</span>
-                Mantén antenas orientadas hacia los nodos
-              </li>
-            </ul>
-            <div className="mt-6 p-4 bg-blue-50 rounded-xl flex items-start gap-3">
-              <span className="material-symbols-outlined text-blue-500">info</span>
-              <div>
-                <h3 className="font-semibold text-blue-800">Importante</h3>
-                <p className="text-sm text-blue-700">Mantener el Gateway alejado de fuentes de interferencia como motores o equipos eléctricos grandes.</p>
-              </div>
+            <h3 className="text-xl font-bold text-[#181c1d] tracking-tight">Conexión del Gateway</h3>
+            <p className="text-[#41474e] text-sm leading-6 mb-4">
+              Verifica que el Gateway esté conectado a la corriente y que esté encendido.
+            </p>
+            <div className="bg-[#e5e9ea] p-4 rounded-lg overflow-x-auto">
+              <table className="w-full text-xs border-collapse">
+                <thead>
+                  <tr className="border-b-2 border-[#c1c7cf]">
+                    <th className="text-left py-3 px-3 font-semibold text-[#181c1d]">Información</th>
+                    <th className="text-center py-3 px-2 font-semibold text-[#181c1d]">ON</th>
+                    <th className="text-center py-3 px-2 font-semibold text-[#181c1d]">Mode</th>
+                    <th className="text-center py-3 px-2 font-semibold text-[#181c1d]">Mode</th>
+                    <th className="text-left py-3 px-3 font-semibold text-[#181c1d]">Solución</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-[#c1c7cf]/30">
+                    <td className="py-3 px-3 font-medium">Equipo apagado</td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-gray-400 inline-block"></span></td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-gray-400 inline-block"></span></td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full border border-gray-400 inline-block bg-white"></span></td>
+                    <td className="py-3 px-3 text-[#41474e]">Verificar la conexión eléctrica<br/>o el botón de encendido</td>
+                  </tr>
+                  <tr className="border-b border-[#c1c7cf]/30">
+                    <td className="py-3 px-3 font-medium">Envío de datos</td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-green-600 inline-block"></span></td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full border-2 border-gray-300 inline-block"></span></td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-green-600 inline-block"></span></td>
+                    <td className="py-3 px-3 text-[#41474e]">Envío exitoso de datos<br/>a la plataforma</td>
+                  </tr>
+                  <tr className="border-b border-[#c1c7cf]/30">
+                    <td className="py-3 px-3 font-medium">Recepción de datos</td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-green-600 inline-block"></span></td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-green-600 inline-block"></span></td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-blue-600 inline-block"></span></td>
+                    <td className="py-3 px-3 text-[#41474e]">El equipo recibe información<br/>de los sensores</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-3 font-medium">Fallo de envío</td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-green-600 inline-block"></span></td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full border-2 border-gray-300 inline-block"></span></td>
+                    <td className="py-3 px-2 text-center"><span className="w-4 h-4 rounded-full bg-red-600 inline-block"></span></td>
+                    <td className="py-3 px-3 text-[#41474e]">Verificar red (internet)<br/><em className="text-xs italic">Ver paso 3</em></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
-        </div>
 
-        <div className="mt-16 bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-[#1a1a2e] mb-6 text-center">¿Necesitas ayuda?</h2>
-          <p className="text-gray-600 text-center mb-8">Contacta a nuestro equipo de soporte</p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-              <div className="w-12 h-12 bg-[#00b894] rounded-full flex items-center justify-center">
-                <span className="material-symbols-outlined text-white">person</span>
-              </div>
-              <div>
-                <h3 className="font-semibold text-[#1a1a2e]">Damian García</h3>
-                <p className="text-sm text-gray-600">damian.garcia@asimetrix.co</p>
-                <p className="text-sm text-gray-600">+57 311 2078988</p>
-              </div>
+          {/* Step 3 Card */}
+          <div className="flex flex-col gap-6 p-8 bg-white rounded-xl shadow-sm border-t-4 border-[#275c82]">
+            <div className="flex items-center justify-between">
+              <span className="text-4xl font-black text-[#c1c7cf] opacity-30">03</span>
+              <span className="material-symbols-outlined text-[#014469] text-3xl">wifi</span>
             </div>
-            <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl">
-              <div className="w-12 h-12 bg-[#00b894] rounded-full flex items-center justify-center">
-                <span className="material-symbols-outlined text-white">person</span>
+            <h3 className="text-xl font-bold text-[#181c1d] tracking-tight">Verificación de internet</h3>
+            <p className="text-[#41474e] text-sm leading-6 mb-4">
+              Valida que la red a la que está conectada el Gateway sí tenga internet, verificando que el router del internet esté encendido.
+            </p>
+          </div>
+
+          {/* Nota Aclaratoria */}
+          <div className="bg-[#00626a]/20 border border-[#00626a]/30 p-6 rounded-xl mt-4 col-span-1 lg:col-span-2">
+            <div className="flex items-center gap-2 text-[#00484f] font-bold text-sm mb-3">
+              <span className="material-symbols-outlined text-lg">info</span>
+              Nota importante
+            </div>
+            <p className="text-xs text-[#41474e] mb-4">
+              Si al conectarse al router, no da acceso a internet, reinicia el equipo desconectando el cable que ingresa por la parte baja del router y conéctalo de nuevo en el mismo puerto.
+            </p>
+            <p className="text-xs text-[#41474e] mb-2">
+              Una vez se valide la información anterior, reportar a la persona encarga el fallo que se encontró.
+            </p>
+            <p className="text-xs text-[#014469] font-semibold">
+              Damian García, Tel: +57 304 666 0685
+            </p>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="bg-[#f0f4f5] rounded-xl p-8 md:p-12">
+          <h4 className="text-[#014469] text-2xl font-bold mb-6 text-center">¿Necesitas ayuda?</h4>
+          <p className="text-[#41474e] text-center mb-8">Contacta a nuestro equipo de soporte</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            <div className="bg-white p-6 rounded-xl text-center">
+              <div className="w-16 h-16 bg-[#275c82] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="material-symbols-outlined text-3xl text-white">person</span>
               </div>
-              <div>
-                <h3 className="font-semibold text-[#1a1a2e]">Manuela Chavarría</h3>
-                <p className="text-sm text-gray-600">manuela.chavarria@asimetrix.co</p>
-                <p className="text-sm text-gray-600">+57 318 2202707</p>
+              <h5 className="font-bold text-lg text-[#181c1d] mb-2">Damian García</h5>
+              <p className="text-sm text-[#41474e] mb-1">damian.garcia@asimetrix.co</p>
+              <p className="text-sm text-[#014469] font-semibold">+57 311 2078988</p>
+            </div>
+            <div className="bg-white p-6 rounded-xl text-center">
+              <div className="w-16 h-16 bg-[#275c82] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="material-symbols-outlined text-3xl text-white">person</span>
               </div>
+              <h5 className="font-bold text-lg text-[#181c1d] mb-2">Manuela Chavarría</h5>
+              <p className="text-sm text-[#41474e] mb-1">manuela.chavarria@asimetrix.co</p>
+              <p className="text-sm text-[#014469] font-semibold">+57 318 2202707</p>
             </div>
           </div>
-        </div>
+        </section>
       </main>
 
-      <footer className="bg-[#1a1a2e] text-white py-8 mt-12">
-        <div className="max-w-5xl mx-auto px-6 text-center">
+      {/* Footer */}
+      <footer className="bg-[#f0f4f5] py-8 mt-12">
+        <div className="max-w-7xl mx-auto px-6 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <span className="material-symbols-outlined text-[#00b894]">sensors</span>
-            <span className="text-lg font-semibold">Gateway LoRaWAN</span>
+            <span className="material-symbols-outlined text-[#014469]">router</span>
+            <span className="font-bold text-[#014469]">Gateway</span>
           </div>
-          <p className="text-gray-400">© 2026 Asimetrix - Monitoreo inteligente para tu producción</p>
+          <p className="text-[#41474e] text-sm">© 2026 Asimetrix - Monitoreo inteligente para tu producción</p>
         </div>
       </footer>
     </div>
