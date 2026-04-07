@@ -7,21 +7,18 @@ export default function Home() {
       <header className="bg-surface fixed top-0 w-full z-50 border-b border-[#c1c7cf]/20">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
-            <a href="https://asimetrix-hub.vercel.app/#" className="flex items-center gap-1 px-2 py-1 text-[#014469] hover:bg-[#e5e9ea] rounded-lg transition-colors">
-              <span className="material-symbols-outlined">arrow_back</span>
-              <span className="text-sm font-medium">Volver al Hub</span>
-            </a>
-          </div>
-          <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-[#014469]">auto_stories</span>
             <h1 className="text-lg font-bold text-[#014469] tracking-tight">Guía de instalación</h1>
-            <span className="text-[#41474e]">|</span>
-            <span className="text-[#41474e] font-medium">Asimetrix</span>
           </div>
+          <Image src="/logo-horizontal.svg" alt="Asimetrix" className="h-8" width={120} height={32} />
         </div>
       </header>
 
       <main className="pt-24 pb-24 md:pb-12 max-w-7xl mx-auto px-6">
+        <a href="https://asimetrix-hub.vercel.app/#" className="inline-flex items-center gap-2 text-[#014469] hover:text-[#275c82] transition-colors mb-6">
+          <span className="material-symbols-outlined">arrow_back</span>
+          <span className="font-medium">Volver al Hub</span>
+        </a>
         {/* Hero Section */}
         <section className="mb-8">
           <div className="flex flex-col lg:flex-row gap-8 items-center">
