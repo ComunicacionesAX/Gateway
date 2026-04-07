@@ -12,7 +12,12 @@ export default function Home() {
               <span className="text-sm font-medium">Volver al Hub</span>
             </a>
           </div>
-          <Image src="/logo-horizontal.svg" alt="Asimetrix" width={120} height={32} />
+          <div className="flex items-center gap-3">
+            <span className="material-symbols-outlined text-[#014469]">auto_stories</span>
+            <h1 className="text-lg font-bold text-[#014469] tracking-tight">Guía de instalación</h1>
+            <span className="text-[#41474e]">|</span>
+            <span className="text-[#41474e] font-medium">Asimetrix</span>
+          </div>
         </div>
       </header>
 
