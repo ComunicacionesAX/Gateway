@@ -42,7 +42,7 @@ export default function Home() {
               5 min de lectura
             </span>
             <span className="inline-flex items-center gap-2 px-3 py-1 bg-[#00626a]/20 text-[#00484f] text-xs font-semibold rounded-full">
-              <span class="material-symbols-outlined text-sm">timer</span>
+              <span className="material-symbols-outlined text-sm">timer</span>
               20 min de instalación
             </span>
           </div>
