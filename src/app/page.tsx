@@ -14,7 +14,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="pt-24 pb-24 md:pb-12 max-w-7xl mx-auto px-6">
+      <main className="pt-16 pb-24 md:pb-12 max-w-7xl mx-auto px-6">
         <a href="https://asimetrix-hub.vercel.app/#" className="inline-flex items-center gap-2 text-[#014469] hover:text-[#275c82] transition-colors mb-6">
           <span className="material-symbols-outlined">arrow_back</span>
           <span className="font-medium">Volver al Hub</span>
