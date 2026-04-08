@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#f6fafb] font-sans">
       {/* Header */}
-      <header className="bg-surface fixed top-0 w-full z-50 border-b border-[#c1c7cf]/20">
+      <header className="bg-surface sticky top-0 w-full z-50 border-b border-[#c1c7cf]/20">
         <div className="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-[#014469]">auto_stories</span>
@@ -14,7 +14,7 @@ export default function Home() {
         </div>
       </header>
 
-      <main className="pt-16 pb-24 md:pb-12 max-w-7xl mx-auto px-6">
+      <main className="max-w-7xl mx-auto px-6 py-8">
         <a href="https://asimetrix-hub.vercel.app/#" className="inline-flex items-center gap-2 text-[#014469] hover:text-[#275c82] transition-colors mb-6">
           <span className="material-symbols-outlined">arrow_back</span>
           <span className="font-medium">Volver al Hub</span>
